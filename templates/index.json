@@ -1,0 +1,74 @@
+
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "eyebrow": "Root-first crop care",
+        "heading": "Healthy soil. Stronger",
+        "highlight": "harvests.",
+        "text": "A science-backed, eco-friendly soil conditioner designed to improve fertility, water retention, root development and nutrient absorption.",
+        "button_label": "Explore the Product",
+        "secondary_label": "Our Story"
+      }
+    },
+    "benefits": {
+      "type": "benefits",
+      "blocks": {
+        "benefit1": {"type":"benefit","settings":{"icon":"✦","title":"Improves soil health","text":"Supports soil fertility and creates a better environment for crops."}},
+        "benefit2": {"type":"benefit","settings":{"icon":"💧","title":"Better water retention","text":"Helps soil hold moisture for more efficient crop growth."}},
+        "benefit3": {"type":"benefit","settings":{"icon":"🌱","title":"Stronger roots","text":"Encourages healthy root development from the foundation up."}},
+        "benefit4": {"type":"benefit","settings":{"icon":"↗","title":"Nutrient absorption","text":"Fulvic acid supports more efficient nutrient uptake by plants."}}
+      },
+      "block_order":["benefit1","benefit2","benefit3","benefit4"]
+    },
+    "product": {
+      "type": "product",
+      "settings": {
+        "title":"Humic + Fulvic Soil Conditioner",
+        "description":"Enriched with 70% Potassium Humate and 25% Fulvic Acid to improve soil fertility, water retention, root development and nutrient absorption.",
+        "price":"Water-soluble capsules",
+        "button_label":"See how to use"
+      }
+    },
+    "about": {
+      "type":"about",
+      "blocks": {
+        "point1":{"type":"point","settings":{"text":"Science-backed soil conditioning"}},
+        "point2":{"type":"point","settings":{"text":"Water-soluble capsule convenience"}},
+        "point3":{"type":"point","settings":{"text":"Suitable for all crops"}}
+      },
+      "block_order":["point1","point2","point3"]
+    },
+    "how": {
+      "type":"how-it-works",
+      "blocks": {
+        "step1":{"type":"step","settings":{"title":"Dissolve","text":"Open one capsule and add it to 1 glass (200–250 ml) of clean water."}},
+        "step2":{"type":"step","settings":{"title":"Activate","text":"Stir well and let it stand for 1–2 hours for best results."}},
+        "step3":{"type":"step","settings":{"title":"Apply","text":"Pour the prepared solution into a 15 L sprayer tank, fill with water and spray evenly on crops."}}
+      },
+      "block_order":["step1","step2","step3"]
+    },
+    "testimonials": {
+      "type":"testimonials",
+      "blocks": {
+        "review1":{"type":"review","settings":{"quote":"The easy application makes it simple to add soil care to our regular crop routine.","name":"Farmer / Customer"}},
+        "review2":{"type":"review","settings":{"quote":"The capsule format is convenient and the product story is easy to understand.","name":"Agriculture Professional"}},
+        "review3":{"type":"review","settings":{"quote":"A practical approach to improving soil health while caring for the land.","name":"KrishiJal Community"}}
+      },
+      "block_order":["review1","review2","review3"]
+    },
+    "faq": {
+      "type":"faq",
+      "blocks": {
+        "faq1":{"type":"faq","settings":{"question":"Is KrishiJal suitable for all crops?","answer":"Yes. The assignment brief describes the flagship Humic + Fulvic Soil Conditioner as suitable for all crops."}},
+        "faq2":{"type":"faq","settings":{"question":"What are the key ingredients?","answer":"The brief states that the product is enriched with 70% Potassium Humate and 25% Fulvic Acid."}},
+        "faq3":{"type":"faq","settings":{"question":"How is it applied?","answer":"The provided product image describes a 3-step process: dissolve, activate and apply."}},
+        "faq4":{"type":"faq","settings":{"question":"What makes the product convenient?","answer":"The brief highlights water-soluble capsule technology for easy application and consistent results."}}
+      },
+      "block_order":["faq1","faq2","faq3","faq4"]
+    },
+    "newsletter":{"type":"newsletter","settings":{}}
+  },
+  "order":["hero","benefits","product","about","how","testimonials","faq","newsletter"]
+}

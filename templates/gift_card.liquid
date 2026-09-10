@@ -1,0 +1,31 @@
+{% layout none %}
+
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ shop.name }} - Gift Card</title>
+</head>
+
+<body>
+  <main style="max-width: 700px; margin: 80px auto; padding: 20px; text-align: center;">
+    <h1>{{ shop.name }}</h1>
+
+    <h2>{{ gift_card.initial_value | money }}</h2>
+
+    {% if gift_card.expired %}
+      <p>This gift card has expired.</p>
+    {% elsif gift_card.enabled %}
+      <p>Your gift card is ready to use.</p>
+
+      {% if gift_card.code %}
+        <p>
+          Gift card code:
+          <strong>{{ gift_card.code }}</strong>
+        </p>
+      {% endif %}
+    {% endif %}
+  </main>
+</body>
+</html>

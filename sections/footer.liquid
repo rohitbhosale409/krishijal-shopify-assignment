@@ -1,0 +1,61 @@
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo">
+          {% if section.settings.logo != blank %}
+            {{ section.settings.logo | image_url: width: 360 | image_tag: alt: shop.name }}
+          {% else %}
+            <span style="font-weight:900;font-size:25px;color:#fff">Krishi<span style="color:var(--gold)">Jal</span></span>
+          {% endif %}
+        </div>
+        <p style="margin-top:18px;max-width:320px">{{ section.settings.description }}</p>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <div class="footer-links">
+          <a href="#product">Product</a>
+          <a href="#benefits">Benefits</a>
+          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Brand</h3>
+        <div class="footer-links">
+          <a href="#how-it-works">How It Works</a>
+          <a href="#about">Our Promise</a>
+          <a href="#product">Soil Conditioner</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <div class="footer-links">
+          <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a>
+          <span>{{ section.settings.location }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</span>
+      <span>Healthy Soil. Stronger Crops. Better Harvests.</span>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name":"Footer",
+  "settings":[
+    {"type":"image_picker","id":"logo","label":"Logo"},
+    {"type":"textarea","id":"description","label":"Description","default":"Science-backed, eco-friendly soil conditioning solutions designed to support healthier soil and stronger crops."},
+    {"type":"text","id":"email","label":"Email","default":"hello@krishijal.example"},
+    {"type":"text","id":"location","label":"Location","default":"India"}
+  ]
+}
+{% endschema %}

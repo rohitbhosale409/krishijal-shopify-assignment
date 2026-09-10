@@ -1,0 +1,29 @@
+
+<section class="section newsletter">
+  <div class="container newsletter-box">
+    <div class="reveal">
+      <span class="eyebrow">Stay connected</span>
+      <h2>{{ section.settings.heading }}</h2>
+      <p class="lead">{{ section.settings.text }}</p>
+    </div>
+
+    <form class="form reveal" action="/contact#contact_form" method="post">
+      <input type="hidden" name="form_type" value="customer">
+      <input type="hidden" name="utf8" value="✓">
+      <input type="email" name="contact[email]" placeholder="Enter your email" aria-label="Email address" required>
+      <button class="btn btn-gold" type="submit">{{ section.settings.button }}</button>
+    </form>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name":"Newsletter",
+  "settings":[
+    {"type":"text","id":"heading","label":"Heading","default":"Get practical crop-care updates"},
+    {"type":"textarea","id":"text","label":"Description","default":"Use the newsletter for product education, farming tips and KrishiJal updates."},
+    {"type":"text","id":"button","label":"Button","default":"Subscribe"}
+  ],
+  "presets":[{"name":"Newsletter"}]
+}
+{% endschema %}

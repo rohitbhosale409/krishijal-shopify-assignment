@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#123b28">
+  <link rel="canonical" href="{{ canonical_url }}">
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  <title>
+    {{ page_title }}
+    {% unless page_title contains shop.name %} — {{ shop.name }}{% endunless %}
+  </title>
+
+  {{ content_for_header }}
+
+  <style>
+    :root {
+      --kj-green: {{ settings.brand_green }};
+      --kj-green-dark: {{ settings.brand_green_dark }};
+      --kj-gold: {{ settings.brand_gold }};
+      --kj-cream: {{ settings.brand_cream }};
+      --kj-text: {{ settings.brand_text }};
+    }
+  </style>
+
+  {{ 'style.css' | asset_url | stylesheet_tag }}
+</head>
+
+<body class="gradient">
+  <a class="skip-link" href="#MainContent">Skip to content</a>
+
+  {% sections 'header-group' %}
+
+  <main id="MainContent" role="main">
+    {{ content_for_layout }}
+  </main>
+
+  {% section 'footer' %}
+
+  <script src="{{ 'theme.js' | asset_url }}" defer></script>
+</body>
+</html>

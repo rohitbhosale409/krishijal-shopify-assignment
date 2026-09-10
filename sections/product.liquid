@@ -1,0 +1,43 @@
+
+<section id="product" class="section product-section">
+  <div class="container product-grid">
+    <div class="product-media reveal">
+      {% if section.settings.image != blank %}
+        {{ section.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', alt: section.settings.image.alt | default: section.settings.title }}
+      {% else %}
+        {{ 'product-1' | placeholder_svg_tag }}
+      {% endif %}
+    </div>
+
+    <div class="reveal">
+      <span class="eyebrow">Flagship solution</span>
+      <h2>{{ section.settings.title }}</h2>
+      <p class="lead">{{ section.settings.description }}</p>
+      <div class="price">{{ section.settings.price }}</div>
+
+      <div class="product-meta">
+        <div class="meta"><strong>70%</strong><span>Potassium Humate</span></div>
+        <div class="meta"><strong>25%</strong><span>Fulvic Acid</span></div>
+        <div class="meta"><strong>30</strong><span>Water-soluble capsules</span></div>
+        <div class="meta"><strong>All crops</strong><span>Suitable for every crop</span></div>
+      </div>
+
+      <a class="btn btn-primary" href="{{ section.settings.button_link | default: '#how-it-works' }}">{{ section.settings.button_label }}</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name":"Featured Product",
+  "settings":[
+    {"type":"text","id":"title","label":"Title","default":"Humic + Fulvic Soil Conditioner"},
+    {"type":"textarea","id":"description","label":"Description","default":"Enriched with 70% Potassium Humate and 25% Fulvic Acid to improve soil fertility, water retention, root development and nutrient absorption."},
+    {"type":"text","id":"price","label":"Price","default":"Shop product"},
+    {"type":"text","id":"button_label","label":"Button","default":"See how to use"},
+    {"type":"url","id":"button_link","label":"Button link"},
+    {"type":"image_picker","id":"image","label":"Product image"}
+  ],
+  "presets":[{"name":"Featured Product"}]
+}
+{% endschema %}

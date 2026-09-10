@@ -1,0 +1,48 @@
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      <h1>{{ section.settings.heading | escape }} <span>{{ section.settings.highlight | escape }}</span></h1>
+      <p class="lead">{{ section.settings.text }}</p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="{{ section.settings.button_link | default: '#product' }}">{{ section.settings.button_label }}</a>
+        <a class="btn btn-outline" href="#about">{{ section.settings.secondary_label }}</a>
+      </div>
+
+      <div class="hero-points">
+        <div class="point"><strong>70% Potassium Humate</strong><span>Root-focused soil nutrition</span></div>
+        <div class="point"><strong>25% Fulvic Acid</strong><span>Better nutrient absorption</span></div>
+        <div class="point"><strong>For All Crops</strong><span>Water-soluble capsules</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="product-orb"></div>
+      <div class="badge">SCIENCE<br>MEETS<br>NATURE</div>
+      {% if section.settings.image != blank %}
+        {{ section.settings.image | image_url: width: 1400 | image_tag: class: 'hero-product', loading: 'eager', alt: section.settings.image.alt | default: 'KrishiJal Humic + Fulvic Soil Conditioner' }}
+      {% else %}
+        {{ 'product-1' | placeholder_svg_tag: 'hero-product' }}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "KrishiJal Hero",
+  "settings": [
+    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"Root-first crop care"},
+    {"type":"text","id":"heading","label":"Heading","default":"Healthy soil. Stronger"},
+    {"type":"text","id":"highlight","label":"Highlighted text","default":"harvests."},
+    {"type":"textarea","id":"text","label":"Description","default":"A science-backed, eco-friendly soil conditioner designed to improve fertility, water retention, root development and nutrient absorption."},
+    {"type":"text","id":"button_label","label":"Primary button","default":"Explore the Product"},
+    {"type":"url","id":"button_link","label":"Primary button link"},
+    {"type":"text","id":"secondary_label","label":"Secondary button","default":"Our Story"},
+    {"type":"image_picker","id":"image","label":"Hero product image"}
+  ],
+  "presets":[{"name":"KrishiJal Hero"}]
+}
+{% endschema %}

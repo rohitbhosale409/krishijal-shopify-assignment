@@ -1,0 +1,46 @@
+
+<div class="topbar">{{ section.settings.announcement }}</div>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="{{ routes.root_url }}" aria-label="{{ shop.name }}">
+      {% if section.settings.logo != blank %}
+        {{ section.settings.logo | image_url: width: 360 | image_tag: alt: shop.name, loading: 'eager' }}
+      {% else %}
+        <span style="font-weight:900;font-size:24px;color:var(--green)">Krishi<span style="color:var(--gold)">Jal</span></span>
+      {% endif %}
+    </a>
+
+    <nav class="nav-links" data-menu aria-label="Main navigation">
+      <a href="#benefits">Benefits</a>
+      <a href="#product">Product</a>
+      <a href="#about">About</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="btn btn-primary" href="#product">Shop Now</a>
+      <button class="icon-btn menu-toggle" data-menu-toggle aria-expanded="false" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "KrishiJal Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "announcement",
+      "label": "Announcement",
+      "default": "Healthy Soil • Stronger Crops • Better Harvests"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    }
+  ]
+}
+{% endschema %}

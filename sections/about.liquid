@@ -1,0 +1,50 @@
+
+<section id="about" class="section about">
+  <div class="container about-grid">
+    <div class="about-card reveal">
+      <span class="eyebrow">Our promise</span>
+      <h2>{{ section.settings.card_heading }}</h2>
+      <p>{{ section.settings.card_text }}</p>
+      <div class="quote">“{{ section.settings.quote }}”</div>
+    </div>
+
+    <div class="reveal">
+      <span class="eyebrow">About KrishiJal</span>
+      <h2>{{ section.settings.heading }}</h2>
+      <p class="lead">{{ section.settings.text_1 }}</p>
+      <p>{{ section.settings.text_2 }}</p>
+
+      <ul class="checks">
+        {% for block in section.blocks %}
+          <li {{ block.shopify_attributes }}><span>{{ block.settings.text }}</span></li>
+        {% endfor %}
+      </ul>
+
+      <a class="btn btn-outline" href="#how-it-works">Learn the process</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name":"About KrishiJal",
+  "settings":[
+    {"type":"text","id":"card_heading","label":"Card heading","default":"Science-backed. Farmer-focused."},
+    {"type":"textarea","id":"card_text","label":"Card text","default":"We focus on efficiency, quality and environmental responsibility so farmers can nurture the land while working toward better harvests."},
+    {"type":"text","id":"quote","label":"Quote","default":"Healthy Soil. Stronger Crops. Better Harvests."},
+    {"type":"text","id":"heading","label":"Heading","default":"Healthy soil is the foundation of a prosperous harvest."},
+    {"type":"textarea","id":"text_1","label":"Paragraph 1","default":"KrishiJal is an innovative agricultural solutions brand dedicated to improving soil health and enhancing crop productivity through science-backed, eco-friendly products."},
+    {"type":"textarea","id":"text_2","label":"Paragraph 2","default":"Designed for farmers who seek better yields with sustainable farming practices, KrishiJal offers advanced soil conditioning solutions that strengthen plant growth from the roots up."}
+  ],
+  "blocks":[
+    {"type":"point","name":"Point","settings":[{"type":"text","id":"text","label":"Point","default":"Eco-friendly, practical crop care"}]}
+  ],
+  "presets":[
+    {"name":"About KrishiJal","blocks":[
+      {"type":"point","settings":{"text":"Science-backed soil conditioning"}},
+      {"type":"point","settings":{"text":"Water-soluble capsule convenience"}},
+      {"type":"point","settings":{"text":"Suitable for all crops"}}
+    ]}
+  ]
+}
+{% endschema %}

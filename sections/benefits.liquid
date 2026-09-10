@@ -1,0 +1,52 @@
+
+<section id="benefits" class="section benefits">
+  <div class="container">
+    <div class="center reveal">
+      <span class="eyebrow">Why KrishiJal</span>
+      <h2>{{ section.settings.heading }}</h2>
+      <p class="lead">{{ section.settings.text }}</p>
+    </div>
+
+    <div class="benefit-grid" style="margin-top:45px">
+      {% for block in section.blocks %}
+        <article class="benefit-card reveal" {{ block.shopify_attributes }}>
+          <div class="benefit-icon">{{ block.settings.icon }}</div>
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name":"Benefits",
+  "settings":[
+    {"type":"text","id":"heading","label":"Heading","default":"Give your soil the foundation it deserves"},
+    {"type":"textarea","id":"text","label":"Description","default":"Built around the idea that healthier soil creates stronger plants and more productive farms."}
+  ],
+  "blocks":[
+    {
+      "type":"benefit",
+      "name":"Benefit",
+      "settings":[
+        {"type":"text","id":"icon","label":"Icon / symbol","default":"✦"},
+        {"type":"text","id":"title","label":"Title","default":"Better soil health"},
+        {"type":"textarea","id":"text","label":"Text","default":"Supports soil fertility and helps create a stronger growing environment."}
+      ]
+    }
+  ],
+  "presets":[
+    {
+      "name":"Benefits",
+      "blocks":[
+        {"type":"benefit","settings":{"icon":"✦","title":"Improves soil health","text":"Supports soil fertility and creates a better environment for crops."}},
+        {"type":"benefit","settings":{"icon":"💧","title":"Better water retention","text":"Helps soil hold moisture for more efficient crop growth."}},
+        {"type":"benefit","settings":{"icon":"🌱","title":"Stronger roots","text":"Encourages healthy root development from the foundation up."}},
+        {"type":"benefit","settings":{"icon":"↗","title":"Nutrient absorption","text":"Fulvic acid supports more efficient nutrient uptake by plants."}}
+      ]
+    }
+  ]
+}
+{% endschema %}

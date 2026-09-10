@@ -1,0 +1,13 @@
+
+[
+  {
+    "name": "KrishiJal Brand",
+    "settings": [
+      {"type":"color","id":"brand_green","label":"Brand green","default":"#123b28"},
+      {"type":"color","id":"brand_green_dark","label":"Dark green","default":"#0d2b1d"},
+      {"type":"color","id":"brand_gold","label":"Brand gold","default":"#d7a51c"},
+      {"type":"color","id":"brand_cream","label":"Cream","default":"#f7f3e8"},
+      {"type":"color","id":"brand_text","label":"Text","default":"#183126"}
+    ]
+  }
+]
