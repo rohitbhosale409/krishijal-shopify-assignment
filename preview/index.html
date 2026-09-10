@@ -1,393 +1,1066 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="KrishiJal — Healthy Soil. Stronger Crops. Better Harvests.">
-<title>KrishiJal | Healthy Soil. Stronger Crops.</title>
-<link rel="icon" href="../assets/krishijal-logo.png">
-<style>
-:root {
-  --green: #123b28;
-  --green-2: #1c5b3c;
-  --gold: #d7a51c;
-  --gold-light: #f2cf65;
-  --cream: #f7f3e8;
-  --soft: #eef4ec;
-  --text: #183126;
-  --muted: #66756c;
-  --white: #fff;
-  --shadow: 0 18px 50px rgba(13, 49, 33, .12);
-  --radius: 24px;
-  --container: 1180px;
-}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="KrishiJal — Healthy Soil. Stronger Crops. Better Harvests.">
+  <title>KrishiJal | Healthy Soil. Stronger Crops.</title>
+  <link rel="icon" href="assets/krishijal-logo.png">
+  <style>
+    :root {
+      --green: #123b28;
+      --green-2: #1c5b3c;
+      --gold: #d7a51c;
+      --gold-light: #f2cf65;
+      --cream: #f7f3e8;
+      --soft: #eef4ec;
+      --text: #183126;
+      --muted: #66756c;
+      --white: #fff;
+      --shadow: 0 18px 50px rgba(13, 49, 33, .12);
+      --radius: 24px;
+      --container: 1180px;
+    }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  color: var(--text);
-  background: #fff;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.6;
-}
-img { max-width: 100%; display: block; }
-a { color: inherit; text-decoration: none; }
-button, input { font: inherit; }
-button { cursor: pointer; }
-.container { width: min(calc(100% - 40px), var(--container)); margin-inline: auto; }
-.section { padding: 90px 0; }
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 14px;
-  color: var(--gold);
-  font-weight: 800;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: .14em;
-}
-.eyebrow::before { content: ""; width: 26px; height: 2px; background: currentColor; }
-h1,h2,h3,p { margin-top: 0; }
-h1,h2,h3 { line-height: 1.08; letter-spacing: -.03em; }
-h1 { font-size: clamp(42px, 6vw, 76px); margin-bottom: 22px; }
-h2 { font-size: clamp(34px, 4vw, 52px); margin-bottom: 18px; }
-h3 { font-size: 22px; }
-.lead { font-size: 18px; color: var(--muted); max-width: 650px; }
-.center { text-align: center; }
-.center .lead { margin-inline: auto; }
+    * {
+      box-sizing: border-box;
+    }
 
-.skip-link {
-  position: fixed; left: 12px; top: 12px; z-index: 1000;
-  padding: 10px 16px; background: var(--gold); color: var(--green);
-  transform: translateY(-160%); border-radius: 10px; font-weight: 700;
-}
-.skip-link:focus { transform: translateY(0); }
+    html {
+      scroll-behavior: smooth;
+    }
 
-.topbar {
-  background: var(--green);
-  color: #fff;
-  text-align: center;
-  padding: 9px 15px;
-  font-size: 13px;
-  font-weight: 700;
-}
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(255,255,255,.94);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(18,59,40,.08);
-}
-.nav {
-  min-height: 78px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-}
-.logo img { width: 156px; height: auto; }
-.nav-links { display: flex; gap: 28px; align-items: center; }
-.nav-links a { font-size: 14px; font-weight: 700; }
-.nav-links a:hover { color: var(--gold); }
-.nav-actions { display: flex; align-items: center; gap: 10px; }
-.icon-btn {
-  border: 1px solid rgba(18,59,40,.12);
-  background: #fff;
-  width: 42px; height: 42px; border-radius: 50%;
-  display: grid; place-items: center;
-}
-.menu-toggle { display: none; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: #fff;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
 
-.btn {
-  display: inline-flex; justify-content: center; align-items: center;
-  min-height: 50px; padding: 0 24px; border-radius: 999px;
-  border: 1px solid transparent; font-weight: 800; transition: .2s ease;
-}
-.btn-primary { background: var(--green); color: #fff; }
-.btn-primary:hover { background: var(--green-2); transform: translateY(-2px); }
-.btn-gold { background: var(--gold); color: var(--green); }
-.btn-outline { border-color: rgba(18,59,40,.2); background: #fff; }
-.btn-outline:hover { border-color: var(--gold); }
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-.hero {
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 80% 20%, rgba(215,165,28,.22), transparent 28%),
-    linear-gradient(135deg, #f7f3e8 0%, #eff5ed 100%);
-}
-.hero-grid {
-  min-height: 690px;
-  display: grid; grid-template-columns: 1.02fr .98fr;
-  align-items: center; gap: 50px;
-}
-.hero-copy { padding: 50px 0; }
-.hero-copy h1 span { color: var(--gold); }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-.hero-points {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  gap: 12px; margin-top: 36px; max-width: 610px;
-}
-.point {
-  padding: 15px; background: rgba(255,255,255,.72);
-  border: 1px solid rgba(18,59,40,.08); border-radius: 16px;
-}
-.point strong { display: block; font-size: 14px; }
-.point span { font-size: 12px; color: var(--muted); }
-.hero-visual { position: relative; }
-.product-orb {
-  position: absolute; inset: 8% 5% 7% 5%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(215,165,28,.35), rgba(215,165,28,0) 65%);
-}
-.hero-product {
-  position: relative; width: 100%; max-width: 640px; margin: auto;
-  filter: drop-shadow(0 30px 30px rgba(0,0,0,.24));
-  border-radius: 28px;
-}
-.badge {
-  position: absolute; z-index: 2; right: 5%; top: 8%;
-  width: 112px; height: 112px; border-radius: 50%;
-  background: var(--green); color: #fff; display: grid; place-items: center;
-  text-align: center; font-weight: 900; font-size: 13px;
-  border: 5px solid var(--gold);
-  box-shadow: var(--shadow);
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.benefits { background: var(--green); color: #fff; }
-.benefit-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
-.benefit-card {
-  padding: 28px; border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.05); border-radius: 20px;
-}
-.benefit-icon {
-  width: 48px; height: 48px; display:grid; place-items:center;
-  background: rgba(215,165,28,.15); color: var(--gold);
-  border-radius: 14px; font-weight: 900; font-size: 20px; margin-bottom: 18px;
-}
-.benefit-card h3 { margin-bottom: 8px; }
-.benefit-card p { margin: 0; color: rgba(255,255,255,.72); font-size: 14px; }
+    button,
+    input {
+      font: inherit;
+    }
 
-.product-section { background: #fff; }
-.product-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items:center; }
-.product-media {
-  background: #f1f4ec; border-radius: 28px; padding: 30px; overflow:hidden;
-}
-.product-media img { border-radius: 18px; mix-blend-mode: multiply; }
-.price { font-size: 30px; font-weight: 900; color: var(--green); margin: 18px 0; }
-.product-meta { display:grid; grid-template-columns:repeat(2,1fr); gap: 12px; margin: 24px 0; }
-.meta { padding: 16px; border:1px solid rgba(18,59,40,.1); border-radius: 14px; }
-.meta strong { display:block; font-size:13px; }
-.meta span { color:var(--muted); font-size:12px; }
+    button {
+      cursor: pointer;
+    }
 
-.about { background: var(--cream); }
-.about-grid { display:grid; grid-template-columns: .9fr 1.1fr; gap:70px; align-items:center; }
-.about-card {
-  background: var(--green); color:#fff; padding:42px; border-radius:28px;
-  box-shadow:var(--shadow);
-}
-.about-card .quote { color: var(--gold-light); font-size:26px; font-weight:900; margin-top:28px; }
-.checks { display:grid; gap:14px; margin:28px 0; padding:0; list-style:none; }
-.checks li { display:flex; gap:12px; align-items:flex-start; }
-.checks li::before { content:"✓"; flex:0 0 26px; width:26px; height:26px; display:grid; place-items:center; border-radius:50%; background:var(--gold); color:var(--green); font-weight:900; }
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin-inline: auto;
+    }
 
-.steps-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:45px; }
-.step { padding:30px; border:1px solid rgba(18,59,40,.1); border-radius:22px; background:#fff; box-shadow:0 8px 30px rgba(18,59,40,.05); }
-.step-num { color:var(--gold); font-size:14px; font-weight:900; }
-.step h3 { margin:10px 0; }
-.step p { margin:0; color:var(--muted); }
+    .section {
+      padding: 90px 0;
+    }
 
-.testimonials { background:#f7f8f3; }
-.testimonial-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:40px; }
-.testimonial { background:#fff; padding:30px; border-radius:22px; }
-.stars { color:var(--gold); letter-spacing:4px; }
-.testimonial p { color:var(--muted); margin:18px 0; }
-.testimonial strong { font-size:14px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+    }
 
-.faq-list { max-width:850px; margin:35px auto 0; }
-.faq-item { border-bottom:1px solid rgba(18,59,40,.12); }
-.faq-q {
-  width:100%; border:0; background:transparent; padding:22px 0;
-  display:flex; justify-content:space-between; text-align:left;
-  color:var(--text); font-weight:800; font-size:17px;
-}
-.faq-a { display:none; padding:0 0 22px; color:var(--muted); }
-.faq-item.open .faq-a { display:block; }
-.faq-item.open .faq-q span { transform:rotate(45deg); }
+    .eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      background: currentColor;
+    }
 
-.newsletter {
-  background: linear-gradient(135deg,var(--green),#1b5538);
-  color:#fff;
-}
-.newsletter-box { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
-.newsletter .lead { color:rgba(255,255,255,.72); }
-.form { display:flex; gap:10px; }
-.form input {
-  flex:1; min-width:0; border:0; border-radius:999px;
-  padding:0 20px; min-height:52px; outline:none;
-}
-.form button { border:0; }
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
 
-.footer { background:#0d2b1d; color:#fff; padding:65px 0 25px; }
-.footer-grid { display:grid; grid-template-columns:1.5fr repeat(3,1fr); gap:40px; }
-.footer h3 { font-size:15px; letter-spacing:.02em; }
-.footer p, .footer a { color:rgba(255,255,255,.62); font-size:14px; }
-.footer-links { display:grid; gap:9px; }
-.footer-bottom { margin-top:45px; padding-top:20px; border-top:1px solid rgba(255,255,255,.1); color:rgba(255,255,255,.45); font-size:12px; display:flex; justify-content:space-between; gap:20px; }
+    h1,
+    h2,
+    h3 {
+      line-height: 1.08;
+      letter-spacing: -.03em;
+    }
 
-.reveal { opacity:0; transform:translateY(18px); transition:opacity .65s ease, transform .65s ease; }
-.reveal.visible { opacity:1; transform:none; }
+    h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      margin-bottom: 22px;
+    }
 
-@media (max-width: 980px) {
-  .nav-links { display:none; position:absolute; left:20px; right:20px; top:76px; padding:20px; background:#fff; border-radius:18px; box-shadow:var(--shadow); flex-direction:column; align-items:flex-start; }
-  .nav-links.open { display:flex; }
-  .menu-toggle { display:grid; }
-  .hero-grid, .product-grid, .about-grid, .newsletter-box { grid-template-columns:1fr; }
-  .hero-grid { min-height:auto; padding:40px 0 70px; }
-  .hero-copy { padding:20px 0 0; }
-  .benefit-grid { grid-template-columns:repeat(2,1fr); }
-  .footer-grid { grid-template-columns:repeat(2,1fr); }
-}
-@media (max-width: 640px) {
-  .container { width:min(calc(100% - 28px),var(--container)); }
-  .section { padding:65px 0; }
-  .nav { min-height:70px; }
-  .logo img { width:125px; }
-  .nav-actions .btn { display:none; }
-  h1 { font-size:42px; }
-  .hero-actions { flex-direction:column; }
-  .hero-actions .btn { width:100%; }
-  .hero-points, .benefit-grid, .steps-grid, .testimonial-grid, .product-meta, .footer-grid { grid-template-columns:1fr; }
-  .hero-product { border-radius:18px; }
-  .badge { width:82px; height:82px; font-size:10px; border-width:3px; }
-  .product-grid, .about-grid { gap:35px; }
-  .about-card { padding:28px; }
-  .form { flex-direction:column; }
-  .form button { width:100%; }
-  .footer-bottom { flex-direction:column; }
-}
-</style>
-</head>
-<body>
-<div class="topbar">Healthy Soil • Stronger Crops • Better Harvests</div>
-<header class="site-header">
-  <div class="container nav">
-    <a class="logo" href="#"><img src="../assets/krishijal-logo.png" alt="KrishiJal"></a>
-    <nav class="nav-links" data-menu>
-      <a href="#benefits">Benefits</a><a href="#product">Product</a><a href="#about">About</a>
-      <a href="#how-it-works">How It Works</a><a href="#faq">FAQ</a>
-    </nav>
-    <div class="nav-actions">
-      <a class="btn btn-primary" href="#product">Shop Now</a>
-      <button class="icon-btn menu-toggle" data-menu-toggle aria-expanded="false" aria-label="Open menu">☰</button>
-    </div>
-  </div>
-</header>
+    h2 {
+      font-size: clamp(34px, 4vw, 52px);
+      margin-bottom: 18px;
+    }
 
-<main>
-<section class="hero">
-<div class="container hero-grid">
-<div class="hero-copy reveal">
-<span class="eyebrow">Root-first crop care</span>
-<h1>Healthy soil. Stronger <span>harvests.</span></h1>
-<p class="lead">A science-backed, eco-friendly soil conditioner designed to improve fertility, water retention, root development and nutrient absorption.</p>
-<div class="hero-actions"><a class="btn btn-primary" href="#product">Explore the Product</a><a class="btn btn-outline" href="#about">Our Story</a></div>
-<div class="hero-points">
-<div class="point"><strong>70% Potassium Humate</strong><span>Root-focused soil nutrition</span></div>
-<div class="point"><strong>25% Fulvic Acid</strong><span>Better nutrient absorption</span></div>
-<div class="point"><strong>For All Crops</strong><span>Water-soluble capsules</span></div>
-</div>
-</div>
-<div class="hero-visual reveal"><div class="product-orb"></div><div class="badge">SCIENCE<br>MEETS<br>NATURE</div><img class="hero-product" src="../assets/krishijal-product.jpeg" alt="KrishiJal Humic + Fulvic Soil Conditioner"></div>
-</div>
-</section>
+    h3 {
+      font-size: 22px;
+    }
 
-<section id="benefits" class="section benefits"><div class="container">
-<div class="center reveal"><span class="eyebrow">Why KrishiJal</span><h2>Give your soil the foundation it deserves</h2><p class="lead">Built around the idea that healthier soil creates stronger plants and more productive farms.</p></div>
-<div class="benefit-grid" style="margin-top:45px">
-<article class="benefit-card reveal"><div class="benefit-icon">✦</div><h3>Improves soil health</h3><p>Supports soil fertility and creates a better environment for crops.</p></article>
-<article class="benefit-card reveal"><div class="benefit-icon">💧</div><h3>Better water retention</h3><p>Helps soil hold moisture for more efficient crop growth.</p></article>
-<article class="benefit-card reveal"><div class="benefit-icon">🌱</div><h3>Stronger roots</h3><p>Encourages healthy root development from the foundation up.</p></article>
-<article class="benefit-card reveal"><div class="benefit-icon">↗</div><h3>Nutrient absorption</h3><p>Fulvic acid supports more efficient nutrient uptake by plants.</p></article>
-</div></div></section>
+    .lead {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 650px;
+    }
 
-<section id="product" class="section product-section"><div class="container product-grid">
-<div class="product-media reveal"><img src="../assets/krishijal-product.jpeg" alt="KrishiJal Humic + Fulvic Soil Conditioner"></div>
-<div class="reveal"><span class="eyebrow">Flagship solution</span><h2>Humic + Fulvic Soil Conditioner</h2>
-<p class="lead">Enriched with 70% Potassium Humate and 25% Fulvic Acid to improve soil fertility, water retention, root development and nutrient absorption.</p>
-<div class="price">Water-soluble capsules</div>
-<div class="product-meta"><div class="meta"><strong>70%</strong><span>Potassium Humate</span></div><div class="meta"><strong>25%</strong><span>Fulvic Acid</span></div><div class="meta"><strong>30</strong><span>Water-soluble capsules</span></div><div class="meta"><strong>All crops</strong><span>Suitable for every crop</span></div></div>
-<a class="btn btn-primary" href="#how-it-works">See how to use</a></div>
-</div></section>
+    .center {
+      text-align: center;
+    }
 
-<section id="about" class="section about"><div class="container about-grid">
-<div class="about-card reveal"><span class="eyebrow">Our promise</span><h2>Science-backed. Farmer-focused.</h2><p>We focus on efficiency, quality and environmental responsibility so farmers can nurture the land while working toward better harvests.</p><div class="quote">“Healthy Soil. Stronger Crops. Better Harvests.”</div></div>
-<div class="reveal"><span class="eyebrow">About KrishiJal</span><h2>Healthy soil is the foundation of a prosperous harvest.</h2>
-<p class="lead">KrishiJal is an innovative agricultural solutions brand dedicated to improving soil health and enhancing crop productivity through science-backed, eco-friendly products.</p>
-<p>Designed for farmers who seek better yields with sustainable farming practices, KrishiJal offers advanced soil conditioning solutions that strengthen plant growth from the roots up.</p>
-<ul class="checks"><li><span>Science-backed soil conditioning</span></li><li><span>Water-soluble capsule convenience</span></li><li><span>Suitable for all crops</span></li></ul>
-<a class="btn btn-outline" href="#how-it-works">Learn the process</a></div>
-</div></section>
+    .center .lead {
+      margin-inline: auto;
+    }
 
-<section id="how-it-works" class="section"><div class="container center"><span class="eyebrow">Simple application</span><h2>A simple 3-step process</h2><p class="lead">Easy to apply, easy to repeat, and designed for consistent results.</p>
-<div class="steps-grid"><article class="step reveal"><div class="step-num">01</div><h3>Dissolve</h3><p>Open one capsule and add it to 1 glass (200–250 ml) of clean water.</p></article><article class="step reveal"><div class="step-num">02</div><h3>Activate</h3><p>Stir well and let it stand for 1–2 hours for best results.</p></article><article class="step reveal"><div class="step-num">03</div><h3>Apply</h3><p>Pour the prepared solution into a 15 L sprayer tank, fill with water and spray evenly on crops.</p></article></div>
-</div></section>
+    .skip-link {
+      position: fixed;
+      left: 12px;
+      top: 12px;
+      z-index: 1000;
+      padding: 10px 16px;
+      background: var(--gold);
+      color: var(--green);
+      transform: translateY(-160%);
+      border-radius: 10px;
+      font-weight: 700;
+    }
 
-<section class="section testimonials"><div class="container center"><span class="eyebrow">Built for confidence</span><h2>A better foundation for every harvest</h2><p class="lead">Use this section for farmer reviews, field results or brand proof as real customer feedback becomes available.</p>
-<div class="testimonial-grid"><article class="testimonial reveal"><div class="stars">★★★★★</div><p>“The easy application makes it simple to add soil care to our regular crop routine.”</p><strong>Farmer / Customer</strong></article><article class="testimonial reveal"><div class="stars">★★★★★</div><p>“The capsule format is convenient and the product story is easy to understand.”</p><strong>Agriculture Professional</strong></article><article class="testimonial reveal"><div class="stars">★★★★★</div><p>“A practical approach to improving soil health while caring for the land.”</p><strong>KrishiJal Community</strong></article></div>
-</div></section>
+    .skip-link:focus {
+      transform: translateY(0);
+    }
 
-<section id="faq" class="section"><div class="container"><div class="center reveal"><span class="eyebrow">Need to know</span><h2>Frequently asked questions</h2></div>
-<div class="faq-list">
-<div class="faq-item reveal" data-faq><button class="faq-q" data-faq-button>Is KrishiJal suitable for all crops?<span>+</span></button><div class="faq-a">Yes. The assignment brief describes the flagship Humic + Fulvic Soil Conditioner as suitable for all crops.</div></div>
-<div class="faq-item reveal" data-faq><button class="faq-q" data-faq-button>What are the key ingredients?<span>+</span></button><div class="faq-a">The brief states that the product is enriched with 70% Potassium Humate and 25% Fulvic Acid.</div></div>
-<div class="faq-item reveal" data-faq><button class="faq-q" data-faq-button>How is it applied?<span>+</span></button><div class="faq-a">The provided product image describes a 3-step process: dissolve, activate and apply.</div></div>
-<div class="faq-item reveal" data-faq><button class="faq-q" data-faq-button>What makes the product convenient?<span>+</span></button><div class="faq-a">The brief highlights water-soluble capsule technology for easy application and consistent results.</div></div>
-</div></div></section>
+    .topbar {
+      background: var(--green);
+      color: #fff;
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 13px;
+      font-weight: 700;
+    }
 
-<section class="section newsletter"><div class="container newsletter-box"><div class="reveal"><span class="eyebrow">Stay connected</span><h2>Get practical crop-care updates</h2><p class="lead">Use the newsletter for product education, farming tips and KrishiJal updates.</p></div><form class="form reveal" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');"><input type="email" placeholder="Enter your email" required><button class="btn btn-gold">Subscribe</button></form></div></section>
-</main>
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, .94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(18, 59, 40, .08);
+    }
 
-<footer class="footer"><div class="container"><div class="footer-grid">
-<div><img src="../assets/krishijal-logo.png" alt="KrishiJal" style="width:160px"><p>Science-backed, eco-friendly soil conditioning solutions designed to support healthier soil and stronger crops.</p></div>
-<div><h3>Explore</h3><div class="footer-links"><a href="#product">Product</a><a href="#benefits">Benefits</a><a href="#about">About</a><a href="#faq">FAQ</a></div></div>
-<div><h3>Brand</h3><div class="footer-links"><a href="#how-it-works">How It Works</a><a href="#about">Our Promise</a></div></div>
-<div><h3>Reference</h3><div class="footer-links"><a href="https://nutritiouz.com/" target="_blank" rel="noopener">Nutritiouz</a><a href="https://arthbyemcure.com/" target="_blank" rel="noopener">Arth by Emcure</a></div></div>
-</div><div class="footer-bottom"><span>© 2026 KrishiJal. Assignment prototype.</span><span>Healthy Soil. Stronger Crops. Better Harvests.</span></div></div></footer>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const menu = document.querySelector('[data-menu]');
-  const toggle = document.querySelector('[data-menu-toggle]');
-  if (menu && toggle) {
-    toggle.addEventListener('click', () => {
-      const open = menu.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  }
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
 
-  document.querySelectorAll('[data-faq]').forEach(item => {
-    const button = item.querySelector('[data-faq-button]');
-    if (!button) return;
-    button.addEventListener('click', () => {
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('[data-faq]').forEach(other => other.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
+    .logo img {
+      width: 156px;
+      height: auto;
+    }
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon-btn {
+      border: 1px solid rgba(18, 59, 40, .12);
+      background: #fff;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50px;
+      padding: 0 24px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 800;
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--green-2);
+      transform: translateY(-2px);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--green);
+    }
+
+    .btn-outline {
+      border-color: rgba(18, 59, 40, .2);
+      background: #fff;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+    }
+
+    .hero {
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(215, 165, 28, .22), transparent 28%),
+        linear-gradient(135deg, #f7f3e8 0%, #eff5ed 100%);
+    }
+
+    .hero-grid {
+      min-height: 690px;
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .hero-copy {
+      padding: 50px 0;
+    }
+
+    .hero-copy h1 span {
+      color: var(--gold);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 36px;
+      max-width: 610px;
+    }
+
+    .point {
+      padding: 15px;
+      background: rgba(255, 255, 255, .72);
+      border: 1px solid rgba(18, 59, 40, .08);
+      border-radius: 16px;
+    }
+
+    .point strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .point span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .product-orb {
+      position: absolute;
+      inset: 8% 5% 7% 5%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(215, 165, 28, .35), rgba(215, 165, 28, 0) 65%);
+    }
+
+    .hero-product {
+      position: relative;
+      width: 100%;
+      max-width: 640px;
+      margin: auto;
+      filter: drop-shadow(0 30px 30px rgba(0, 0, 0, .24));
+      border-radius: 28px;
+    }
+
+    .badge {
+      position: absolute;
+      z-index: 2;
+      right: 5%;
+      top: 8%;
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-weight: 900;
+      font-size: 13px;
+      border: 5px solid var(--gold);
+      box-shadow: var(--shadow);
+    }
+
+    .benefits {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .benefit-card {
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      background: rgba(255, 255, 255, .05);
+      border-radius: 20px;
+    }
+
+    .benefit-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      background: rgba(215, 165, 28, .15);
+      color: var(--gold);
+      border-radius: 14px;
+      font-weight: 900;
+      font-size: 20px;
+      margin-bottom: 18px;
+    }
+
+    .benefit-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .benefit-card p {
+      margin: 0;
+      color: rgba(255, 255, 255, .72);
+      font-size: 14px;
+    }
+
+    .product-section {
+      background: #fff;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .product-media {
+      background: #f1f4ec;
+      border-radius: 28px;
+      padding: 30px;
+      overflow: hidden;
+    }
+
+    .product-media img {
+      border-radius: 18px;
+      mix-blend-mode: multiply;
+    }
+
+    .price {
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--green);
+      margin: 18px 0;
+    }
+
+    .product-meta {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .meta {
+      padding: 16px;
+      border: 1px solid rgba(18, 59, 40, .1);
+      border-radius: 14px;
+    }
+
+    .meta strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .meta span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .about {
+      background: var(--cream);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-card {
+      background: var(--green);
+      color: #fff;
+      padding: 42px;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-card .quote {
+      color: var(--gold-light);
+      font-size: 26px;
+      font-weight: 900;
+      margin-top: 28px;
+    }
+
+    .checks {
+      display: grid;
+      gap: 14px;
+      margin: 28px 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .checks li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .checks li::before {
+      content: "✓";
+      flex: 0 0 26px;
+      width: 26px;
+      height: 26px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 45px;
+    }
+
+    .step {
+      padding: 30px;
+      border: 1px solid rgba(18, 59, 40, .1);
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 0 8px 30px rgba(18, 59, 40, .05);
+    }
+
+    .step-num {
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .step h3 {
+      margin: 10px 0;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .testimonials {
+      background: #f7f8f3;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 40px;
+    }
+
+    .testimonial {
+      background: #fff;
+      padding: 30px;
+      border-radius: 22px;
+    }
+
+    .stars {
+      color: var(--gold);
+      letter-spacing: 4px;
+    }
+
+    .testimonial p {
+      color: var(--muted);
+      margin: 18px 0;
+    }
+
+    .testimonial strong {
+      font-size: 14px;
+    }
+
+    .faq-list {
+      max-width: 850px;
+      margin: 35px auto 0;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(18, 59, 40, .12);
+    }
+
+    .faq-q {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      padding: 22px 0;
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+      color: var(--text);
+      font-weight: 800;
+      font-size: 17px;
+    }
+
+    .faq-a {
+      display: none;
+      padding: 0 0 22px;
+      color: var(--muted);
+    }
+
+    .faq-item.open .faq-a {
+      display: block;
+    }
+
+    .faq-item.open .faq-q span {
+      transform: rotate(45deg);
+    }
+
+    .newsletter {
+      background: linear-gradient(135deg, var(--green), #1b5538);
+      color: #fff;
+    }
+
+    .newsletter-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .newsletter .lead {
+      color: rgba(255, 255, 255, .72);
+    }
+
+    .form {
+      display: flex;
+      gap: 10px;
+    }
+
+    .form input {
+      flex: 1;
+      min-width: 0;
+      border: 0;
+      border-radius: 999px;
+      padding: 0 20px;
+      min-height: 52px;
+      outline: none;
+    }
+
+    .form button {
+      border: 0;
+    }
+
+    .footer {
+      background: #0d2b1d;
+      color: #fff;
+      padding: 65px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .footer h3 {
+      font-size: 15px;
+      letter-spacing: .02em;
+    }
+
+    .footer p,
+    .footer a {
+      color: rgba(255, 255, 255, .62);
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 9px;
+    }
+
+    .footer-bottom {
+      margin-top: 45px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      color: rgba(255, 255, 255, .45);
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: 76px;
+        padding: 20px;
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: flex-start;
       }
-    });
-  }, { threshold: 0.08 });
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-});
-</script>
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: grid;
+      }
+
+      .hero-grid,
+      .product-grid,
+      .about-grid,
+      .newsletter-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        min-height: auto;
+        padding: 40px 0 70px;
+      }
+
+      .hero-copy {
+        padding: 20px 0 0;
+      }
+
+      .benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(calc(100% - 28px), var(--container));
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .nav {
+        min-height: 70px;
+      }
+
+      .logo img {
+        width: 125px;
+      }
+
+      .nav-actions .btn {
+        display: none;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-points,
+      .benefit-grid,
+      .steps-grid,
+      .testimonial-grid,
+      .product-meta,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-product {
+        border-radius: 18px;
+      }
+
+      .badge {
+        width: 82px;
+        height: 82px;
+        font-size: 10px;
+        border-width: 3px;
+      }
+
+      .product-grid,
+      .about-grid {
+        gap: 35px;
+      }
+
+      .about-card {
+        padding: 28px;
+      }
+
+      .form {
+        flex-direction: column;
+      }
+
+      .form button {
+        width: 100%;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">Healthy Soil • Stronger Crops • Better Harvests</div>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="#"><img src="assets/krishijal-logo.png" alt="KrishiJal"></a>
+      <nav class="nav-links" data-menu>
+        <a href="#benefits">Benefits</a><a href="#product">Product</a><a href="#about">About</a>
+        <a href="#how-it-works">How It Works</a><a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="#product">Shop Now</a>
+        <button class="icon-btn menu-toggle" data-menu-toggle aria-expanded="false" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Root-first crop care</span>
+          <h1>Healthy soil. Stronger <span>harvests.</span></h1>
+          <p class="lead">A science-backed, eco-friendly soil conditioner designed to improve fertility, water
+            retention, root development and nutrient absorption.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="#product">Explore the Product</a><a
+              class="btn btn-outline" href="#about">Our Story</a></div>
+          <div class="hero-points">
+            <div class="point"><strong>70% Potassium Humate</strong><span>Root-focused soil nutrition</span></div>
+            <div class="point"><strong>25% Fulvic Acid</strong><span>Better nutrient absorption</span></div>
+            <div class="point"><strong>For All Crops</strong><span>Water-soluble capsules</span></div>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="product-orb"></div>
+          <div class="badge">SCIENCE<br>MEETS<br>NATURE</div><img class="hero-product"
+            src="assets/krishijal-product.jpeg" alt="KrishiJal Humic + Fulvic Soil Conditioner">
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits" class="section benefits">
+      <div class="container">
+        <div class="center reveal"><span class="eyebrow">Why KrishiJal</span>
+          <h2>Give your soil the foundation it deserves</h2>
+          <p class="lead">Built around the idea that healthier soil creates stronger plants and more productive farms.
+          </p>
+        </div>
+        <div class="benefit-grid" style="margin-top:45px">
+          <article class="benefit-card reveal">
+            <div class="benefit-icon">✦</div>
+            <h3>Improves soil health</h3>
+            <p>Supports soil fertility and creates a better environment for crops.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <div class="benefit-icon">💧</div>
+            <h3>Better water retention</h3>
+            <p>Helps soil hold moisture for more efficient crop growth.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <div class="benefit-icon">🌱</div>
+            <h3>Stronger roots</h3>
+            <p>Encourages healthy root development from the foundation up.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <div class="benefit-icon">↗</div>
+            <h3>Nutrient absorption</h3>
+            <p>Fulvic acid supports more efficient nutrient uptake by plants.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="product" class="section product-section">
+      <div class="container product-grid">
+        <div class="product-media reveal"><img src="assets/krishijal-product.jpeg"
+            alt="KrishiJal Humic + Fulvic Soil Conditioner"></div>
+        <div class="reveal"><span class="eyebrow">Flagship solution</span>
+          <h2>Humic + Fulvic Soil Conditioner</h2>
+          <p class="lead">Enriched with 70% Potassium Humate and 25% Fulvic Acid to improve soil fertility, water
+            retention, root development and nutrient absorption.</p>
+          <div class="price">Water-soluble capsules</div>
+          <div class="product-meta">
+            <div class="meta"><strong>70%</strong><span>Potassium Humate</span></div>
+            <div class="meta"><strong>25%</strong><span>Fulvic Acid</span></div>
+            <div class="meta"><strong>30</strong><span>Water-soluble capsules</span></div>
+            <div class="meta"><strong>All crops</strong><span>Suitable for every crop</span></div>
+          </div>
+          <a class="btn btn-primary" href="#how-it-works">See how to use</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="container about-grid">
+        <div class="about-card reveal"><span class="eyebrow">Our promise</span>
+          <h2>Science-backed. Farmer-focused.</h2>
+          <p>We focus on efficiency, quality and environmental responsibility so farmers can nurture the land while
+            working toward better harvests.</p>
+          <div class="quote">“Healthy Soil. Stronger Crops. Better Harvests.”</div>
+        </div>
+        <div class="reveal"><span class="eyebrow">About KrishiJal</span>
+          <h2>Healthy soil is the foundation of a prosperous harvest.</h2>
+          <p class="lead">KrishiJal is an innovative agricultural solutions brand dedicated to improving soil health and
+            enhancing crop productivity through science-backed, eco-friendly products.</p>
+          <p>Designed for farmers who seek better yields with sustainable farming practices, KrishiJal offers advanced
+            soil conditioning solutions that strengthen plant growth from the roots up.</p>
+          <ul class="checks">
+            <li><span>Science-backed soil conditioning</span></li>
+            <li><span>Water-soluble capsule convenience</span></li>
+            <li><span>Suitable for all crops</span></li>
+          </ul>
+          <a class="btn btn-outline" href="#how-it-works">Learn the process</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="section">
+      <div class="container center"><span class="eyebrow">Simple application</span>
+        <h2>A simple 3-step process</h2>
+        <p class="lead">Easy to apply, easy to repeat, and designed for consistent results.</p>
+        <div class="steps-grid">
+          <article class="step reveal">
+            <div class="step-num">01</div>
+            <h3>Dissolve</h3>
+            <p>Open one capsule and add it to 1 glass (200–250 ml) of clean water.</p>
+          </article>
+          <article class="step reveal">
+            <div class="step-num">02</div>
+            <h3>Activate</h3>
+            <p>Stir well and let it stand for 1–2 hours for best results.</p>
+          </article>
+          <article class="step reveal">
+            <div class="step-num">03</div>
+            <h3>Apply</h3>
+            <p>Pour the prepared solution into a 15 L sprayer tank, fill with water and spray evenly on crops.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials">
+      <div class="container center"><span class="eyebrow">Built for confidence</span>
+        <h2>A better foundation for every harvest</h2>
+        <p class="lead">Use this section for farmer reviews, field results or brand proof as real customer feedback
+          becomes available.</p>
+        <div class="testimonial-grid">
+          <article class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>“The easy application makes it simple to add soil care to our regular crop routine.”</p><strong>Farmer /
+              Customer</strong>
+          </article>
+          <article class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>“The capsule format is convenient and the product story is easy to understand.”</p><strong>Agriculture
+              Professional</strong>
+          </article>
+          <article class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>“A practical approach to improving soil health while caring for the land.”</p><strong>KrishiJal
+              Community</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="center reveal"><span class="eyebrow">Need to know</span>
+          <h2>Frequently asked questions</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item reveal" data-faq><button class="faq-q" data-faq-button>Is KrishiJal suitable for all
+              crops?<span>+</span></button>
+            <div class="faq-a">Yes. The assignment brief describes the flagship Humic + Fulvic Soil Conditioner as
+              suitable for all crops.</div>
+          </div>
+          <div class="faq-item reveal" data-faq><button class="faq-q" data-faq-button>What are the key
+              ingredients?<span>+</span></button>
+            <div class="faq-a">The brief states that the product is enriched with 70% Potassium Humate and 25% Fulvic
+              Acid.</div>
+          </div>
+          <div class="faq-item reveal" data-faq><button class="faq-q" data-faq-button>How is it
+              applied?<span>+</span></button>
+            <div class="faq-a">The provided product image describes a 3-step process: dissolve, activate and apply.
+            </div>
+          </div>
+          <div class="faq-item reveal" data-faq><button class="faq-q" data-faq-button>What makes the product
+              convenient?<span>+</span></button>
+            <div class="faq-a">The brief highlights water-soluble capsule technology for easy application and consistent
+              results.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section newsletter">
+      <div class="container newsletter-box">
+        <div class="reveal"><span class="eyebrow">Stay connected</span>
+          <h2>Get practical crop-care updates</h2>
+          <p class="lead">Use the newsletter for product education, farming tips and KrishiJal updates.</p>
+        </div>
+        <form class="form reveal" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');"><input
+            type="email" placeholder="Enter your email" required><button class="btn btn-gold">Subscribe</button></form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><img src="assets/krishijal-logo.png" alt="KrishiJal" style="width:160px">
+          <p>Science-backed, eco-friendly soil conditioning solutions designed to support healthier soil and stronger
+            crops.</p>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <div class="footer-links"><a href="#product">Product</a><a href="#benefits">Benefits</a><a
+              href="#about">About</a><a href="#faq">FAQ</a></div>
+        </div>
+        <div>
+          <h3>Brand</h3>
+          <div class="footer-links"><a href="#how-it-works">How It Works</a><a href="#about">Our Promise</a></div>
+        </div>
+        <div>
+          <h3>Reference</h3>
+          <div class="footer-links"><a href="https://nutritiouz.com/" target="_blank" rel="noopener">Nutritiouz</a><a
+              href="https://arthbyemcure.com/" target="_blank" rel="noopener">Arth by Emcure</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 KrishiJal. Assignment prototype.</span><span>Healthy Soil. Stronger Crops.
+          Better Harvests.</span></div>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menu = document.querySelector('[data-menu]');
+      const toggle = document.querySelector('[data-menu-toggle]');
+      if (menu && toggle) {
+        toggle.addEventListener('click', () => {
+          const open = menu.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+
+      document.querySelectorAll('[data-faq]').forEach(item => {
+        const button = item.querySelector('[data-faq-button]');
+        if (!button) return;
+        button.addEventListener('click', () => {
+          const wasOpen = item.classList.contains('open');
+          document.querySelectorAll('[data-faq]').forEach(other => other.classList.remove('open'));
+          if (!wasOpen) item.classList.add('open');
+        });
+      });
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+  </script>
 </body>
+
 </html>
