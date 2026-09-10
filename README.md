@@ -1,71 +1,94 @@
+# 🌱 KrishiJal Shopify Coding Assignment
 
-# KrishiJal Shopify Coding Assignment
+A responsive Shopify Online Store 2.0 theme created for the **KrishiJal** brand as part of a Shopify coding assignment.
 
-This package contains:
-- `preview/index.html` — standalone browser preview. No Shopify account required.
-- `layout/`, `sections/`, `templates/`, `assets/`, `config/` — Shopify Online Store 2.0 theme files.
-- Brand logo and product image supplied in the assignment PDF.
-- Responsive navigation, hero, benefits, featured product, about, how-it-works, testimonials, FAQ, newsletter and footer.
-- Theme Editor settings and section/block schemas.
+KrishiJal is an agricultural solutions brand focused on improving soil health and crop productivity through science-backed and eco-friendly products.
 
-## 1. Quick preview in your browser
+## 🚀 Live Preview
 
-Option A — easiest:
-1. Open `preview/index.html` in Chrome.
-2. Everything is local except the optional web font fallback; no build step is required.
+**Shopify Preview:**  
+https://krishijal-store.myshopify.com/?preview_theme_id=185801277740
 
-Option B — VS Code:
-1. Open this folder in VS Code.
-2. Install the "Live Server" extension.
-3. Right-click `preview/index.html`.
-4. Select "Open with Live Server".
+**GitHub Repository:**  
+https://github.com/rohitbhosale409/krishijal-shopify-assignment
 
-## 2. Run it as a Shopify theme
+---
 
-You need:
-- A Shopify development store.
-- Shopify CLI.
-- Node.js LTS.
+## ✨ Key Features
 
-Install Shopify CLI using the official Shopify instructions.
+- Responsive Shopify Online Store 2.0 theme
+- Mobile-friendly navigation with hamburger menu
+- Product-focused hero section
+- KrishiJal brand logo and supplied product image
+- 70% Potassium Humate and 25% Fulvic Acid messaging
+- Product benefits section
+- Featured product section
+- About KrishiJal section
+- How It Works section
+- Testimonials section
+- FAQ accordion
+- Newsletter subscription section
+- Responsive footer
+- Smooth scroll/reveal interactions
+- Shopify Theme Editor customization support
+- Section and block schemas
+- Responsive design for desktop, tablet and mobile
 
-Then open a terminal inside this project folder and run:
+---
 
-```bash
-shopify theme dev --store YOUR-STORE.myshopify.com
-```
+## 🛠️ Technologies Used
 
-The CLI will provide a local preview URL and let you edit the theme locally.
+- Shopify Liquid
+- HTML5
+- CSS3
+- JavaScript
+- Shopify Online Store 2.0
+- Shopify Theme Editor
+- Shopify CLI
 
-## 3. Upload to Shopify
+---
 
-From the project root:
+## 📁 Project Structure
 
-```bash
-shopify theme push --store YOUR-STORE.myshopify.com
-```
-
-Choose the theme when prompted.
-
-For a safer first upload, push as an unpublished theme and test it before publishing.
-
-## 4. Theme Editor
-
-After the theme is uploaded:
-1. Shopify Admin → Online Store → Themes.
-2. Open the uploaded theme.
-3. Click Customize.
-4. You can edit section text, images, colors, blocks and content through the Theme Editor.
-
-## Important assignment note
-
-The provided PDF contains brand information, logo/product images, an About Brand description and website references. It does not specify an exact pixel-perfect homepage layout, exact pricing, contact details, or final customer testimonials. Those areas are therefore implemented as editable placeholders rather than invented business facts.
-
-Reference sites listed in the brief:
-- https://nutritiouz.com/
-- https://arthbyemcure.com/
-- https://www.whatsupwellness.in/
-- https://manmatters.com/
-- 3D reference: https://www.euveka.com/
-
-The design is inspired by common patterns visible in the references (clean D2C navigation, product-led hero, benefit blocks, proof/content sections) without copying their branding or code.
+```text
+KrishiJal-Shopify-Assignment/
+│
+├── assets/
+│   ├── krishijal-logo.png
+│   ├── krishijal-product.jpeg
+│   ├── style.css
+│   └── theme.js
+│
+├── config/
+│   ├── header-group.json
+│   ├── settings_data.json
+│   └── settings_schema.json
+│
+├── layout/
+│   └── theme.liquid
+│
+├── locales/
+│   └── en.default.json
+│
+├── preview/
+│   └── index.html
+│
+├── sections/
+│   ├── about.liquid
+│   ├── benefits.liquid
+│   ├── faq.liquid
+│   ├── footer.liquid
+│   ├── header-group.json
+│   ├── header.liquid
+│   ├── hero.liquid
+│   ├── how-it-works.liquid
+│   ├── newsletter.liquid
+│   ├── product.liquid
+│   └── testimonials.liquid
+│
+├── templates/
+│   ├── gift_card.liquid
+│   └── index.json
+│
+├── .shopifyignore
+└── README.md
